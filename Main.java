@@ -1,41 +1,25 @@
-// Adhuna Devineni
-// AP Comp Sci Period 3
-
-
-import java.util.ArrayList;
-import java.util.Collections;
+// Adhuna Devineni AP CSA Period 3
 
 public class Main {
     public static void main(String[] args) {
+        School msj = new School(50); // number of classrooms
 
-        ArrayList<String> wordlist = new ArrayList<>();
+        Student a = new Student("Natasha", 17); // name, age
+        Student b = new Student("Nessa", 16);
+        Student c = new Student("Phoenix", 15);
 
-        Collections.addAll(wordlist,
-                "abbey", "abbot", "abhor",
-                "abide", "abled", "abler",
-                "abode", "abort", "about",
-                "above", "abuse", "abyss",
-                "ached", "aches", "acids",
-                "acing", "acorn", "acres",
-                "acted", "actor", "acute",
-                "adage", "adapt", "added",
-                "adder", "adieu",
-                "wrack", "wrath", "wreak",
-                "wreck", "wrist", "write",
-                "wrote", "wryly", "xenon",
-                "xylem", "yacht", "yanks",
-                "yards", "years", "yeast",
-                "yells", "yodel", "young",
-                "yours", "youth", "yucca",
-                "zebra", "zeros", "zests",
-                "zonal", "zoned", "zooms"
-        );
+        Classroom c1 = new Classroom();
+        Classroom c2 = new Classroom();
 
-        Collections.sort(wordlist);
+        c1.addStudent(a);
+        c1.addStudent(b);
+        c2.addStudent(c);
 
-        System.out.println("-----");
-        for (String x : wordlist) {
-            System.out.println(x);
-        }
+        msj.setIndividualClassroom(c1, 0);
+        msj.setIndividualClassroom(c2, 1);
+
+        System.out.println(msj.getIndividualClassroom(0).getStudent(0).getName());
+        System.out.println(msj.getIndividualClassroom(0).getStudent(1).getName());
+        System.out.println(msj.getIndividualClassroom(1).getStudent(0).getAge());
     }
 }
